@@ -1,0 +1,43 @@
+<section class="login-content mt-5  m-auto">
+  <div class="container-fluid  p-0">
+    <div class="row g-0">
+      <div class="col-lg-6  d-lg-flex  d-none">
+        <div class="img ">
+          <img class="w-100 " height="500" src="../../../assets/Imgs/gaming.jpg" alt="gaming">
+        </div>
+      </div>
+      <div class="col-lg-6   m-auto  text-center">
+        <div class="content d-flex align-items-center flex-column">
+          <img class="" src="../../../assets/Imgs/logo.png" width="100" alt="">
+          <h3 >Log in to GameOver </h3>
+          <div *ngIf="apiError" class="alert alert-danger w-75 p-2 ">
+            {{apiError| uppercase}}
+          </div>
+          <form (ngSubmit)="handleLogin(loginForm)" [formGroup] = "loginForm" class="w-100 d-flex align-items-center flex-column">
+            <input formControlName="email" type="text" class="form-control w-75  mt-4" placeholder="Email" >
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="w-75 p-0">
+              <p *ngIf="loginForm.get('email')?.getError('email')" class="p-0 m-0 text-danger">Email inValid </p>
+              <p *ngIf="loginForm.get('email')?.getError('required')" class="p-0 m-0 text-danger">Email is Required</p>
+            </div>
+
+            <input formControlName="password" type="password" class="form-control w-75 mt-4 " placeholder="Password ">
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class=" w-75">
+              <p *ngIf="loginForm.get('password')?.getError('pattern')" class="m-2  text-danger">Password Must Contain at least 8 characters , uppercase , lowercase , numbers , special characters </p>
+              <p *ngIf="loginForm.get('password')?.getError('required')" class="m-2  text-danger ">Password is Required</p>
+            </div>
+
+            <button  [disabled]="loginForm.invalid" type="submit" class="btn btn-secondary border-dark  text-white w-75 py-2 fw-semibold fs-5 mt-4">
+              <i *ngIf="isLoading" class="fas fa-spinner fa-spin"></i>
+              <span *ngIf="!isLoading"  class="">Login</span>
+            </button>
+          </form>
+          <hr class="w-75 text-white">
+          <div>
+            <a href="" class="a-none text-blue" (click)="forgetPass()">Forgot Password?</a>
+            <p>Not a member yet?<a routerLink="/signUp" class="a-none text-blue" >Create Account <i class="fa-solid fa-angle-right text-blue"></i> </a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

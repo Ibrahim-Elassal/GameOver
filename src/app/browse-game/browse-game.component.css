@@ -1,0 +1,57 @@
+/* start main */
+.home .row .card-box {
+  border: 1px solid rgb(0 0 0 / 18%);
+  border-radius: 5px;
+  transition: transform .5s;
+  cursor: pointer;
+}
+
+.home .row .card {
+  background-color: var(--main-color) !important;
+  box-sizing: border-box;
+  height: 300px !important;
+}
+.container{
+  margin-top: 100px !important;
+  font-family: "Comfortaa", cursive;
+}
+.card-box {
+  cursor: pointer;
+}
+.home .row .card img {
+  filter: grayscale(0.7);
+  transition: filter .5s;
+}
+.home .row .card-body h5{
+  font-size: .875em;
+}
+.home .row .card-body button {
+  filter: grayscale(0.7);
+  transition: filter .5s;
+}
+.home .row .card-body .card-text {
+  font-size: .875em;
+  color: rgb(144,146,149);
+}
+.home .row .card-footer {
+  border-top: 1px solid rgb(0 0 0 / 18%)!important;
+  filter: grayscale(0.7);
+  transition: filter .5s;
+}
+.card-box:hover {
+  transform: scale(1.1);
+}
+.home .row .card-box:hover .card img ,
+.home .row .card-box:hover .card-body button ,
+.home .row .card-box:hover .card-footer
+{
+  filter: grayscale(0);
+}
+@media only screen and (max-width: 768px) {
+  .home .row .card {
+      background-color: var(--main-color) !important;
+      box-sizing: border-box;
+      height : fit-content !important
+  }
+}
+/* end main */

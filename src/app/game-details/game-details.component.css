@@ -1,0 +1,56 @@
+.details {
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position: center center;
+  height: 100vh;
+
+}
+
+.layer{
+  background: linear-gradient(rgba(30, 32, 35, 0.9),#272b30);
+}
+.container {
+  margin-top: 100px;
+
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.image-container:hover .overlay {
+  display: block;
+}
+.overlay img,
+.overlay video {
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover;
+}
+ul li {
+  list-style: none;
+}
+h2,h3,p,ul{
+  color: var(--light-color);
+}
+a:hover{
+  background-color: var(--blue-color);
+}
+.no-dots .owl-dots , .owl-prev , .owl-next {
+  display: none !important;
+  }
+  @media screen and  (max-height: 768px)
+{
+  .container {
+    margin-left: 10px;
+  }
+
+}

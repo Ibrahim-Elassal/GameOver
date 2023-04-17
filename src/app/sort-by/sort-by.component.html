@@ -1,0 +1,28 @@
+<main class="container my-5 home d-block vh-100">
+  <div *ngIf="loading" class="d-flex justify-content-center align-items-center w-100 bg-main h-100"> <!-- show spinner when loading is true -->
+    <app-spinner></app-spinner>
+  </div>
+  <div class="row"  *ngIf="!loading">
+    <div class=" col-12  col-md-4  col-xxl-3  my-3 col" *ngFor="let game of sortGames">
+      <div class="card-box" [routerLink]="['/gameDetails' , game.id]">
+      <div class="card border-0 m-3">
+          <img src="{{game.thumbnail}}" class="card-img-top" alt="...">
+          <div class="card-body p-0 text-center">
+          <div class="d-flex justify-content-between mt-3">
+              <h5 class="card-title text-white text-dark ">{{game.title}}</h5>
+              <button class="btn text-bg-primary btn-sm fw-bold">Free</button>
+          </div>
+          <p class="card-text ">{{game.short_description}}</p>
+          </div>
+      </div>
+      <div class="card-footer px-3 py-2 d-flex justify-content-between border-top">
+          <span class="badge bg-grey d-flex align-items-center"><i class="fa-solid fa-plus"></i></span>
+          <div class="">
+            <span class="badge bg-grey me-2">{{game.genre}}</span>
+            <span class="badge bg-grey"><i class="fa-brands fa-windows"></i></span>
+          </div>
+      </div>
+      </div>
+  </div>
+  </div>
+</main>

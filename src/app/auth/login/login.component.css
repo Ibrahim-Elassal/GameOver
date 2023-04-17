@@ -1,0 +1,35 @@
+section {
+  margin-top: 120px !important ;
+}
+.login-content {
+  width: 83%;
+  background-color: rgb(50,56,62);
+}
+a:hover{
+  color: #4799eb ;
+}
+.content div p{
+  color: #eee;
+}
+h3{
+  color: rgb(170,170,170);
+}
+button {
+  background-color: rgb(58,63,68);
+}
+button:hover {
+  background-color: rgb(58,63,68);
+}
+input{
+  background-color: rgb(28,30,34);
+  border: none;
+  color: #eee;
+}
+input:focus{
+  border: none;
+  background-color: rgb(28,30,34);
+  outline: none;
+  box-shadow: none;
+  color: #eee;
+
+}

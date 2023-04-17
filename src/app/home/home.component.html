@@ -1,0 +1,34 @@
+<header class=" m-auto mt-5">
+  <div class="layer d-flex  justify-content-center align-items-center h-100 border-bottom border-dark">
+    <div class="header-content  w-md-50  text-center ">
+      <h1 class="text-light fs-1">Find & track the best <span class="text-blue">free-to-play</span> games! </h1>
+      <p class="text-muted fs-5">Track what you've played and search for what to play next! Plus get free premium loot!</p>
+       <button class="btn btn-light start-50 px-3 py-2  fs-6" routerLink="/games/all">Browse Games</button>
+    </div>
+  </div>
+</header>
+<section class="content  p-3 mt-5">
+  <div *ngIf="loading" class="d-flex justify-content-center align-items-center w-100 bg-main h-100"> <!-- show spinner when loading is true -->
+    <app-spinner></app-spinner>
+  </div>
+    <div class="container-fluid" *ngIf="!loading">
+      <h3 class="text-light"><i class="fa-solid fa-robot"></i> Personalized Recommendations</h3>
+          <div class="row mt-5">
+
+            <div class="col-md-4 p-0 " *ngFor="let game of games">
+              <div class="game me-3 shadow "[routerLink]="['/gameDetails' , game.id]">
+                <div class="game-img">
+                  <img class="w-100" src="{{game.thumbnail}}" alt="">
+                </div>
+                <div class="d-flex justify-content-between p-3">
+                  <h4 class="text-light">{{game.title}}</h4>
+                  <button class="btn  btn-sm fw-bold text-white ">FREE</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+    </div>
+</section>
+
+<!--id ,  thumbnail ,  title , short_description , genre -->

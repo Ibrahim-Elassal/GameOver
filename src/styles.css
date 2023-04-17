@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+  --main-color : rgb(39,43,48);
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px ;
+  --blue-color:#4799eb ;
+  --light-color :rgb(174, 178, 181) !important ;
+  --grey-color : grey ;
+}
+
+body {
+  background-color: var(--main-color) !important
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.text-blue{
+  color: var(--blue-color);
+}
+.bg-blue
+{
+  background-color: var(--blue-color);
+}
+.a-none{
+  text-decoration: none;
+}
+.border-blue
+{
+  border: 1px solid var(--blue-color)  !important;
+}
+.text-light{
+  color: var(--light-color) !important;
+}
+.bg-light
+{
+  background-color: var(--light-color);
+}
+.text-grey{
+  color: var(--grey-color) !important;
+}
+.bg-grey
+{
+  background-color: var(--grey-color) !important;
+}
+.shadow
+{
+  box-shadow: var(--shadow);
+}
+.bg-main{
+  background-color: var(--main-color);
+}
+.text-main{
+  color: var(--main-color);
+}
+

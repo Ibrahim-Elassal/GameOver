@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light p-3 fixed-top">
+    <div class="container-fluid ">
+    <a class="navbar-brand" href="#">
+      <img class="text-white" width="70" src="../../assets/Imgs/logo.png" alt=""><span class="text-white">Game Over</span>
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-5 text-white" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a *ngIf="isLogin"  class="nav-link text-white" href="#" aria-current="page" >Home </a>
+        </li>
+        <li *ngIf="isLogin"  class="nav-item">
+          <a class="nav-link" routerLink="/games/all">All</a>
+        </li>
+        <li *ngIf="isLogin"  class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle fw-bold" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Platforms</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" [routerLink]="['games/platform' ,'pc']" >pc </a>
+          <a class="dropdown-item" [routerLink]="['games/platform' ,'browser']">browser</a>
+          </div>
+        </li>
+
+        <li *ngIf="isLogin"  class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">sort-by</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" [routerLink]="['games/sort-by' ,'release-date']">release-date</a>
+            <a class="dropdown-item" [routerLink]="['games/sort-by' ,'popularity']">popularity</a>
+            <a class="dropdown-item" [routerLink]="['games/sort-by' ,'alphabetical']">alphabetical</a>
+            <a class="dropdown-item" [routerLink]="['games/sort-by' ,'relevance']">relevance</a>
+          </div>
+        </li>
+
+        <li *ngIf="isLogin"  class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'racing']">racing</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'sports']">sports</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'social']">social</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'shooter']">shooter</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'open-world']">open-world</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'zombie']">zombie</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'fantasy']">fantasy</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'action-rpg']">action-rpg</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'action']">action</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'flight']">flight</a>
+            <a class="dropdown-item" [routerLink]="['games/Categories' ,'battle-royale']">battle-royale</a>
+          </div>
+        </li>
+      </ul>
+      <form class="d-flex ms-auto my-lg-0">
+        <button *ngIf="!isLogin"   routerLink="/login" class="btn  my-2 my-sm-0  text-muted fw-semibold fs-5"  type="submit">Login</button>
+        <button  *ngIf="!isLogin" routerLink="/signUp" class="btn rounded-3 border-primary text-primary my-2 my-sm-0" type="submit">join Free</button>
+        <button   *ngIf="isLogin" (click)="logOut()"  class="btn rounded-3 border-primary text-primary my-2 my-sm-0" type="submit"  >Log Out</button>
+      </form>
+    </div>
+  </div>
+</nav>

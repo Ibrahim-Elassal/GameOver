@@ -1,0 +1,55 @@
+header{
+      background-image: url("../../assets/Imgs/paladins.b44d33d6e7ee1ba8.png");
+       overflow: auto;
+      background-repeat: no-repeat;
+      background-size: cover ;
+      background-position: center center;
+      height: 40vh;
+      font-family: "Comfortaa", cursive;
+}
+.layer {
+  background-color: rgba(28,30,34 , 0.5);
+}
+
+h1 {
+  font-size: 45px !important;
+
+}
+.header-content p {
+  font-size: 19px;
+}
+.header-content button {
+  color: #828282;
+  background-color: transparent;
+  border-color: #828282 !important;
+  transition: all 1s;
+}
+.header-content button:hover {
+  background-color: #888686;
+  color: #fff;
+  border: none ;
+}
+/* Body Content */
+.container-fluid {
+  width: 88%;
+}
+.game{
+   background-color: rgb(50,56,62) ;
+   transition: transform 0.5s ;
+   cursor: pointer;
+}
+.game button {
+  background-color: #4799eb !important;
+}
+.game:hover {
+  transform: scale(1.1);
+}
+.game img
+{
+  filter: grayscale(0.7) !important;
+  transition: filter .5s;
+}
+.game img:hover
+{
+  filter: grayscale(0) !important;
+}

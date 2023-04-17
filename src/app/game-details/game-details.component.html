@@ -1,0 +1,85 @@
+<div class="w-100 h-100 position-absolute top-50 start-50 translate-middle">
+    <div *ngIf="loading" class="spinner position-absolute ">
+      <app-spinner></app-spinner>
+    </div>
+  <div  *ngIf="!loading">
+    <div class="details " style="background-image: url({{gameDetails.thumbnail}})" >
+      <div class="layer w-100" >
+        <div class="container ">
+          <div class="row " *ngIf="gameDetails">
+            <div class="col-md-4 col-12  p-0 m-0">
+              <div class="image-container w-100 " >
+                <img src="{{gameDetails.thumbnail}}" class="rounded-3 w-100" alt="Image">
+                <div class="overlay ">
+                  <!-- <video src="https://www.freetogame.com/g/523/videoplayback.webm" class="rounded-3 " autoplay></video> -->
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-3 mt-4">
+                <button class="btn   btn-sm fw-bold text-white bg-grey ms-3">FREE</button>
+                <a href="{{gameDetails.freetogame_profile_url}}" target="_blank" class="btn bg-blue btn-lg text-white w-75 border-0  fw-bold">PLAY NOW<i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-md-8 col-12 text-white ps-md-4  p-0 ">
+              <div>
+                <h2 class="h1">{{gameDetails.title}}</h2>
+                <p class="desc fs-5 fw-bold">About {{gameDetails.title}} </p>
+                <p class="fs-5">{{gameDetails.description}}</p>
+              </div>
+              <div>
+                <ul *ngIf="gameDetails.minimum_system_requirements">
+                  <p>Minimum System Requirements</p>
+                  <ul class="ps-2">
+                    <li class="py-3"><span class="fw-bold ">graphics :</span> {{gameDetails.minimum_system_requirements.graphics}}</li>
+                    <li><span class="fw-bold">memory : </span>{{gameDetails.minimum_system_requirements.memory}} </li>
+                    <li class="py-3"><span class="fw-bold">os : </span>{{gameDetails.minimum_system_requirements.os}} </li>
+                    <li><span class="fw-bold">processor : </span>{{gameDetails.minimum_system_requirements.processor}}</li>
+                    <li class="py-3"><span class="fw-bold">storage : </span> {{gameDetails.minimum_system_requirements.storage}} </li>
+                  </ul>
+              </ul>
+              </div>
+              <div *ngIf="gameDetails.screenshots.length > 0">
+                <h3 class="">{{gameDetails.title}} Screenshots </h3>
+                <owl-carousel-o [options]="customOptions">
+                  <ng-container *ngFor="let img of gameDetails.screenshots">
+                    <ng-template carouselSlide>
+                      <img class="" width="300" src="{{img.image}}" >
+                    </ng-template>
+                  </ng-container>
+                </owl-carousel-o>
+              </div>
+
+              <div>
+                <h3>Additional Information </h3>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="title">Title</p>
+                    <p> {{gameDetails.title}}</p>
+                    <p class="date">Release Date </p>
+                    <p> {{gameDetails.release_date}}</p>
+                  </div>
+
+                  <div class="col-md-4">
+                    <p class="title">Developer </p>
+                    <p> {{gameDetails.developer}} </p>
+                    <p class="genre">Genre </p>
+                    <p> {{gameDetails.genre}}</p>
+                  </div>
+
+                  <div class="col-md-4">
+                    <p class="title">Publisher</p>
+                    <p> {{gameDetails.publisher}}</p>
+                    <p class="date">Platform </p>
+                    <p><i class="fa-brands fa-windows"></i>  {{gameDetails.platform}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
